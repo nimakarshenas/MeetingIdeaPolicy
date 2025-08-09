@@ -1,0 +1,36 @@
+# Core
+pydantic>=2.7
+fastapi>=0.110
+uvicorn[standard]>=0.29
+loguru>=0.7
+python-dotenv>=1.0
+
+# Data & pipelines
+pandas>=2.2
+numpy>=1.26
+scikit-learn>=1.4
+spacy>=3.7
+
+# Embeddings / NLP
+sentence-transformers>=3.0
+transformers>=4.41
+torch>=2.3
+
+# Graph & DB
+neo4j>=5.20
+py2neo>=2021.2.3
+networkx>=3.3
+pgvector>=0.2.5
+psycopg2-binary>=2.9
+
+# GNNs
+torch-geometric>=2.5
+torch-scatter
+torch-sparse
+
+# Orchestration & DAGs
+apache-airflow>=2.9
+
+# Testing
+pytest>=8.2
+pytest-cov>=5.0

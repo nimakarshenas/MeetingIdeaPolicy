@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gov-convo-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels: { app: gov-convo-api }
+  template:
+    metadata: { labels: { app: gov-convo-api } }
+    spec:
+      containers:
+        - name: api
+          image: ghcr.io/your-org/gov-convo-api:latest
+          ports: [{containerPort: 8000}]
+          envFrom: [{secretRef: {name: gov-convo-secrets}}]
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gov-convo-api-svc
+spec:
+  selector: { app: gov-convo-api }
+  ports: [{ port: 80, targetPort: 8000 }]
